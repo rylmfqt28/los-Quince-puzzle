@@ -1,6 +1,7 @@
 package clases;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Fichas {
     private static ArrayList<Integer> fichas;
@@ -8,6 +9,7 @@ public class Fichas {
     public static ArrayList<Integer> generarFichas() {
         fichas = new ArrayList<>();
         asignarNumeros();
+        ordenAleatorio();
         return fichas;
     }
 
@@ -16,4 +18,9 @@ public class Fichas {
             fichas.add(i);
         }
     }
+    
+    private static void ordenAleatorio(){
+        Collections.shuffle(fichas);
+    }
+    
 }

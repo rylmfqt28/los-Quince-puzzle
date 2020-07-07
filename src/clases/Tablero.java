@@ -14,13 +14,37 @@ public class Tablero {
 
     }
 
+    //para test
     public ArrayList<Integer> getTablero() {
         return actual;
     }
 
-    private void setTablero(int posActual, int posNuevo, int valorFicha) {
+    public void setTablero(int posActual, int posNuevo, int valorFicha) {
         actual.set(posNuevo, valorFicha);
         actual.set(posActual, 0);
+    }
+    
+    //para test
+    public int getFicha(int index){
+        return actual.get(index);
+    }
+    
+    public boolean ganador(){
+        if(fichasOrdenadas.equals(actual)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public ArrayList<Integer> nuevoJuego(){
+        return Fichas.generarFichas();
+    }
+    
+    public void setActual(ArrayList<Integer> nuevoActual){
+        actual = null;
+        actual = nuevoActual;
+        
     }
 
     private void fichasGanador() {
