@@ -4,50 +4,48 @@ import java.util.ArrayList;
 
 public class Tablero {
 
-    private ArrayList<Integer> actual;
+    private ArrayList<Integer> tableroActual;
     private final ArrayList<Integer> fichasOrdenadas;
 
-    public Tablero(ArrayList<Integer> actual) {
-        this.actual = actual;
+    public Tablero(ArrayList<Integer> tableroActual) {
+        this.tableroActual = tableroActual;
         fichasOrdenadas = new ArrayList<>();
-        fichasGanador();
-
+        generarFichasOrdenadas();
     }
 
     //para test
     public ArrayList<Integer> getTablero() {
-        return actual;
+        return tableroActual;
     }
 
     public void setTablero(int posActual, int posNuevo, int valorFicha) {
-        actual.set(posNuevo, valorFicha);
-        actual.set(posActual, 0);
+        tableroActual.set(posNuevo, valorFicha);
+        tableroActual.set(posActual, 0);
     }
     
     //para test
     public int getFicha(int index){
-        return actual.get(index);
+        return tableroActual.get(index);
     }
     
     public boolean ganador(){
-        if(fichasOrdenadas.equals(actual)){
+        if(fichasOrdenadas.equals(tableroActual)){
             return true;
         }else{
             return false;
         }
     }
     
-    public ArrayList<Integer> nuevoJuego(){
+    public ArrayList<Integer> iniciarJuego(){
         return Fichas.generarFichas();
     }
     
-    public void setActual(ArrayList<Integer> nuevoActual){
-        actual = null;
-        actual = nuevoActual;
-        
+    public void setTableroActual(ArrayList<Integer> nuevoTableroActual){
+        tableroActual = null;
+        tableroActual = nuevoTableroActual; 
     }
 
-    private void fichasGanador() {
+    private void generarFichasOrdenadas() {
         fichasOrdenadas.add(1);
         fichasOrdenadas.add(2);
         fichasOrdenadas.add(3);

@@ -9,7 +9,7 @@ public class Fichas {
     public static ArrayList<Integer> generarFichas() {
         fichas = new ArrayList<>();
         asignarNumeros();
-        ordenAleatorio();
+        desordenarFichas();
         return fichas;
     }
 
@@ -19,7 +19,7 @@ public class Fichas {
         }
     }
     
-    private static void ordenAleatorio(){
+    private static void desordenarFichas(){
         Collections.shuffle(fichas);
     }
     

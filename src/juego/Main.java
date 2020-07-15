@@ -1,12 +1,12 @@
 
 package juego;
 
-import ui.ventanaJuego;
+import ui.VentanaJuego;
 
-public class main {
+public class Main {
     
     public static void main(String [] args){
-        ventanaJuego juego = new ventanaJuego();
+        VentanaJuego juego = new VentanaJuego();
         juego.setVisible(true);
     }
     
